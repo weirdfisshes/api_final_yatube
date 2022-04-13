@@ -8,13 +8,13 @@ from .serializers import (
     CommentSerializer,
     FollowSerializer
 )
-from .permissions import AuthorOrIsAuthenticated
+from .permissions import AuthorOrReadOnly
 
 
 class PostViewSet(viewsets.ModelViewSet):
     queryset = Post.objects.all()
     serializer_class = PostSerializer
-    permission_classes = (AuthorOrIsAuthenticated, )
+    permission_classes = (AuthorOrReadOnly, )
 
     def perform_create(self, serializer):
         serializer.save(author=self.request.user)
@@ -27,7 +27,7 @@ class GroupViewSet(viewsets.ReadOnlyModelViewSet):
 
 class CommentsViewSet(viewsets.ModelViewSet):
     serializer_class = CommentSerializer
-    permission_classes = (AuthorOrIsAuthenticated, )
+    permission_classes = (AuthorOrReadOnly, )
 
     def get_queryset(self):
         post = get_object_or_404(Post, pk=self.kwargs.get('post_id'))
