@@ -1,4 +1,4 @@
-# api_final_yatube
+# API социальной сети Yatube
 ### Описание. 
 
 API социальной сети Yatube. REST API Django. Автор: Бурцев Никита.
