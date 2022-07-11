@@ -1,7 +1,7 @@
 # API социальной сети Yatube
 ### Описание. 
 
-API социальной сети Yatube. REST API Django. Автор: Бурцев Никита.
+API социальной сети Yatube. Технологии: Python 3, Django 2.2.19, SQLite3, DRF, Simple-JWT, Git. Автор: Бурцев Никита.
 
 ### Как запустить проект.
 
